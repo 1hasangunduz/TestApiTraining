@@ -73,7 +73,25 @@ public class restAssuredTest {
                 System.out.println(postData);
     }
 
+    @Test
+    void APITestDeneme(){
 
+        given()
+                .get("\"https://reqres.in/api/users?page=2")
+                .then()
+                .statusCode(201)
+                .body("data.id[0]",equalTo(7));
+
+    }
+
+    @Test
+    void  testDeneme(){
+
+        given()
+                .get("https://reqres.in/api/users?page=2")
+                .then()
+                .statusCode(200);
+    }
 
 }
 
